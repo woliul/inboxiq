@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ email.subject }}</title>
+</head>
+<body>
+    <a href="/">Go Back to Dashboard</a>
+    <hr>
+    <h1>{{ email.subject }}</h1>
+
+    <h2>Original Email Body</h2>
+    <textarea rows="25" cols="80" style="width:100%;" readonly>{{ email.raw_body }}</textarea>
+
+    <script>
+      // Function to make the textarea easily copyable
+      const textarea = document.querySelector('textarea');
+      textarea.onclick = function() {
+        this.focus();
+        this.select();
+      };
+    </script>
+</body>
+</html>
